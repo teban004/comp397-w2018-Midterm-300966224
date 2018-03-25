@@ -2,9 +2,9 @@ module scenes {
   export class Level2Scene extends objects.Scene {
     // Private Instance Variables
     private _ocean: objects.Ocean2;
-    private _plane: objects.Plane;
-    private _island: objects.Island;
-    private _clouds: objects.Cloud[];
+    private _plane: objects.Plane2;
+    private _island: objects.Island2;
+    private _clouds: objects.Cloud2[];
     private _cloudNum: number;
     private _scoreBoard: managers.ScoreBoard;
 
@@ -31,18 +31,18 @@ module scenes {
     // Initialize Game Variables and objects
     public Start(): void {
       this._ocean = new objects.Ocean2();
-      this._plane = new objects.Plane();
-      managers.Game.plane = this._plane;
+      this._plane = new objects.Plane2();
+      managers.Game.plane2 = this._plane;
 
-      this._coin = new objects.Coin();
-      this._island = new objects.Island();
+      this._coin = new objects.Coin2();
+      this._island = new objects.Island2();
 
       // instantiate the cloud array
-      this._clouds = new Array<objects.Cloud>();
+      this._clouds = new Array<objects.Cloud2>();
       this._cloudNum = this._levelnumber;
       // loop and add each cloud to the array
       for (let count = 0; count < this._cloudNum; count++) {
-        this._clouds[count] = new objects.Cloud();
+        this._clouds[count] = new objects.Cloud2();
       }
 
       this._engineSound = createjs.Sound.play("engine");

@@ -25,16 +25,16 @@ var scenes;
         // Initialize Game Variables and objects
         Level2Scene.prototype.Start = function () {
             this._ocean = new objects.Ocean2();
-            this._plane = new objects.Plane();
-            managers.Game.plane = this._plane;
-            this._coin = new objects.Coin();
-            this._island = new objects.Island();
+            this._plane = new objects.Plane2();
+            managers.Game.plane2 = this._plane;
+            this._coin = new objects.Coin2();
+            this._island = new objects.Island2();
             // instantiate the cloud array
             this._clouds = new Array();
             this._cloudNum = this._levelnumber;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
-                this._clouds[count] = new objects.Cloud();
+                this._clouds[count] = new objects.Cloud2();
             }
             this._engineSound = createjs.Sound.play("engine");
             this._engineSound.loop = -1; // play forever
