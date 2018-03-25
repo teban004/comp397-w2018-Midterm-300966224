@@ -45,7 +45,7 @@ var scenes;
             this.Main();
         };
         PlayScene.prototype._levelComplete = function () {
-            if (managers.Game.currentScene == config.Scene.PLAY && this._scoreBoard.Score >= 500) {
+            if (managers.Game.currentScene == config.Scene.PLAY && this._scoreBoard.Score >= 100) {
                 managers.Game.currentScene = config.Scene.SECOND;
             }
         };

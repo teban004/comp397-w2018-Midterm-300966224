@@ -24,7 +24,7 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         Level2Scene.prototype.Start = function () {
-            this._ocean = new objects.Ocean();
+            this._ocean = new objects.Ocean2();
             this._plane = new objects.Plane();
             managers.Game.plane = this._plane;
             this._coin = new objects.Coin();
@@ -96,4 +96,4 @@ var scenes;
     }(objects.Scene));
     scenes.Level2Scene = Level2Scene;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=second.js.map
+//# sourceMappingURL=level2.js.map

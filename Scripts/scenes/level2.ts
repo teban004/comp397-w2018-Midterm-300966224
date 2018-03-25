@@ -1,7 +1,7 @@
 module scenes {
-  export class PlayScene extends objects.Scene {
+  export class Level2Scene extends objects.Scene {
     // Private Instance Variables
-    private _ocean: objects.Ocean;
+    private _ocean: objects.Ocean2;
     private _plane: objects.Plane;
     private _island: objects.Island;
     private _clouds: objects.Cloud[];
@@ -30,7 +30,7 @@ module scenes {
 
     // Initialize Game Variables and objects
     public Start(): void {
-      this._ocean = new objects.Ocean();
+      this._ocean = new objects.Ocean2();
       this._plane = new objects.Plane();
       managers.Game.plane = this._plane;
 
@@ -57,7 +57,7 @@ module scenes {
     }
 
     private _levelComplete(): void {
-      if( managers.Game.currentScene==config.Scene.PLAY && this._scoreBoard.Score>=100) {
+      if( managers.Game.currentScene==config.Scene.PLAY && this._scoreBoard.Score>=500) {
         managers.Game.currentScene = config.Scene.SECOND;
       }
     }
