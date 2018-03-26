@@ -65,7 +65,7 @@ var scenes;
                 this._engineSound.stop();
                 managers.Game.currentScene = config.Scene.OVER;
             }
-            if (managers.Game.currentScene == config.Scene.PLAY && this._scoreBoard.Score >= 200) {
+            if (managers.Game.currentScene == config.Scene.PLAY && this._scoreBoard.Score >= 500) {
                 managers.Game.currentScene = config.Scene.SECOND;
             }
         };

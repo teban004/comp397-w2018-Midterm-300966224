@@ -10,5 +10,6 @@ module managers {
     public static textureAtlas: createjs.SpriteSheet;
     public static plane: objects.Plane;
     public static plane2: objects.Plane2;
+    public static plane3: objects.Plane3;
   }
 }

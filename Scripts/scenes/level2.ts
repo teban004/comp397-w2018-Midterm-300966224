@@ -56,12 +56,6 @@ module scenes {
       this.Main();
     }
 
-    private _levelComplete(): void {
-      if( managers.Game.currentScene==config.Scene.SECOND && this._scoreBoard.Score>=500) {
-        managers.Game.currentScene = config.Scene.SECOND;
-      }
-    }
-
     // triggered every frame
     public Update(): void {
       this._ocean.Update();
@@ -88,7 +82,9 @@ module scenes {
         managers.Game.currentScene = config.Scene.OVER;
       }
 
-      this._levelComplete();
+      if( managers.Game.currentScene==config.Scene.SECOND && this._scoreBoard.Score>=1000) {
+        managers.Game.currentScene = config.Scene.THIRD;
+      }
     }
 
     // This is where the fun happens

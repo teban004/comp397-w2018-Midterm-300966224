@@ -10,11 +10,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var scenes;
 (function (scenes) {
-    var Level2Scene = /** @class */ (function (_super) {
-        __extends(Level2Scene, _super);
+    var Level3Scene = /** @class */ (function (_super) {
+        __extends(Level3Scene, _super);
         // Public Properties
         // Constructor
-        function Level2Scene(level) {
+        function Level3Scene(level) {
             var _this = _super.call(this) || this;
             _this._levelnumber = level;
             _this.Start();
@@ -23,18 +23,18 @@ var scenes;
         // Private Mathods
         // Public Methods
         // Initialize Game Variables and objects
-        Level2Scene.prototype.Start = function () {
-            this._ocean = new objects.Ocean2();
-            this._plane = new objects.Plane2();
-            managers.Game.plane2 = this._plane;
-            this._coin = new objects.Coin2();
-            this._island = new objects.Island2();
+        Level3Scene.prototype.Start = function () {
+            this._ocean = new objects.Ocean3();
+            this._plane = new objects.Plane3();
+            managers.Game.plane3 = this._plane;
+            this._coin = new objects.Coin3();
+            this._island = new objects.Island3();
             // instantiate the cloud array
             this._clouds = new Array();
             this._cloudNum = this._levelnumber;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
-                this._clouds[count] = new objects.Cloud2();
+                this._clouds[count] = new objects.Cloud3();
             }
             this._engineSound = createjs.Sound.play("engine");
             this._engineSound.loop = -1; // play forever
@@ -45,7 +45,7 @@ var scenes;
             this.Main();
         };
         // triggered every frame
-        Level2Scene.prototype.Update = function () {
+        Level3Scene.prototype.Update = function () {
             var _this = this;
             this._ocean.Update();
             this._plane.Update();
@@ -65,12 +65,12 @@ var scenes;
                 this._engineSound.stop();
                 managers.Game.currentScene = config.Scene.OVER;
             }
-            if (managers.Game.currentScene == config.Scene.SECOND && this._scoreBoard.Score >= 1000) {
+            if (managers.Game.currentScene == config.Scene.SECOND && this._scoreBoard.Score >= 500) {
                 managers.Game.currentScene = config.Scene.THIRD;
             }
         };
         // This is where the fun happens
-        Level2Scene.prototype.Main = function () {
+        Level3Scene.prototype.Main = function () {
             var _this = this;
             // add the ocean to the scene
             this.addChild(this._ocean);
@@ -89,8 +89,8 @@ var scenes;
             this.addChild(this._scoreBoard.LivesLabel);
             this.addChild(this._scoreBoard.ScoreLabel);
         };
-        return Level2Scene;
+        return Level3Scene;
     }(objects.Scene));
-    scenes.Level2Scene = Level2Scene;
+    scenes.Level3Scene = Level3Scene;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=level2.js.map
+//# sourceMappingURL=level3.js.map
