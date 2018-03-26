@@ -40,12 +40,12 @@ var scenes;
             this._engineSound.loop = -1; // play forever
             this._engineSound.volume = 0.3;
             // create the scoreboard UI for the Scene
-            this._scoreBoard = new managers.ScoreBoard();
+            this._scoreBoard = managers.Game.scoreBoard;
             managers.Game.scoreBoard = this._scoreBoard;
             this.Main();
         };
         Level2Scene.prototype._levelComplete = function () {
-            if (managers.Game.currentScene == config.Scene.PLAY && this._scoreBoard.Score >= 500) {
+            if (managers.Game.currentScene == config.Scene.SECOND && this._scoreBoard.Score >= 500) {
                 managers.Game.currentScene = config.Scene.SECOND;
             }
         };

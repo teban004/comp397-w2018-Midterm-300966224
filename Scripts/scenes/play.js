@@ -44,11 +44,6 @@ var scenes;
             managers.Game.scoreBoard = this._scoreBoard;
             this.Main();
         };
-        PlayScene.prototype._levelComplete = function () {
-            if (managers.Game.currentScene == config.Scene.PLAY && this._scoreBoard.Score >= 100) {
-                managers.Game.currentScene = config.Scene.SECOND;
-            }
-        };
         // triggered every frame
         PlayScene.prototype.Update = function () {
             var _this = this;
@@ -70,7 +65,9 @@ var scenes;
                 this._engineSound.stop();
                 managers.Game.currentScene = config.Scene.OVER;
             }
-            this._levelComplete();
+            if (managers.Game.currentScene == config.Scene.PLAY && this._scoreBoard.Score >= 200) {
+                managers.Game.currentScene = config.Scene.SECOND;
+            }
         };
         // This is where the fun happens
         PlayScene.prototype.Main = function () {

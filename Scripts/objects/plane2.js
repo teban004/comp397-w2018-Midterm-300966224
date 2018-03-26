@@ -32,7 +32,7 @@ var objects;
             this.planeFlash.alpha = 1;
             this.planeFlash.on("animationend", this._animationEnded.bind(this), false);
             this.y = 320;
-            this.x = 0;
+            this.x = this.halfWidth;
             this.rotation = 90;
             this.planeFlash.rotation = 90;
         };
@@ -61,12 +61,12 @@ var objects;
         // check to see if some boundary has been passed
         Plane2.prototype.CheckBounds = function () {
             // right boundary
-            if (this.x >= 640 - this.halfWidth) {
-                this.x = 640 - this.halfWidth;
+            if (this.y >= 480 - this.halfHeight) {
+                this.y = 480 - this.halfHeight;
             }
             // left boundary
-            if (this.x <= this.halfWidth) {
-                this.x = this.halfWidth;
+            if (this.y <= this.halfHeight) {
+                this.y = this.halfHeight;
             }
         };
         return Plane2;

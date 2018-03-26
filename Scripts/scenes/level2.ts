@@ -50,14 +50,14 @@ module scenes {
       this._engineSound.volume = 0.3;
 
       // create the scoreboard UI for the Scene
-      this._scoreBoard = new managers.ScoreBoard();
+      this._scoreBoard = managers.Game.scoreBoard;
       managers.Game.scoreBoard = this._scoreBoard;
 
       this.Main();
     }
 
     private _levelComplete(): void {
-      if( managers.Game.currentScene==config.Scene.PLAY && this._scoreBoard.Score>=500) {
+      if( managers.Game.currentScene==config.Scene.SECOND && this._scoreBoard.Score>=500) {
         managers.Game.currentScene = config.Scene.SECOND;
       }
     }
@@ -115,7 +115,6 @@ module scenes {
       // add scoreboard labels to the scene
       this.addChild(this._scoreBoard.LivesLabel);
       this.addChild(this._scoreBoard.ScoreLabel);
-
       
     }
   }
